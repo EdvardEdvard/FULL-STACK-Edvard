@@ -1,0 +1,30 @@
+selain->palvelin: HTTP POST: https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over selain:
+Palvelin saa uutta inputtia ja päivittää listan
+end note
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+
+note over selain:
+Pyydetään päivitetty lista
+end note
+
+palvelin-->selain: notes
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin-->selain: main.js
+
+note over selain:
+selain alkaa suorittaa js-koodia
+joka pyytää JSON-datan palvelimelta
+end note
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: [{ content: 'sad', date: '2022-08-07T10:33:21.917Z'}, ...]
+
+note over selain:
+selain suorittaa tapahtumankäsittelijän
+joka renderöi muistiinpanot näytölle
+end note

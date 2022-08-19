@@ -1,0 +1,6 @@
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+palvelin-->selain: HTML-koodi
+
+note over selain:
+sisältöä manipuloidaan selaimessa suoritettavalla JavaScriptillä, Code 201 created
+end note
